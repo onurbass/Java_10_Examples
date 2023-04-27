@@ -20,7 +20,7 @@ public class Question7 {
 		double finalSonuc = scanner.nextDouble();
 		
 		System.out.println("isim giriniz");
-//		scanner.nextLine();
+		scanner.nextLine();
 		
 		String isim = scanner.nextLine();
 		
@@ -28,7 +28,7 @@ public class Question7 {
 		
 		System.out.println(isim+" adlı öğrenci ders durumu :\n"+"ortalaması="+ort+((ort>60)? "-Geçti":"-Kaldı"));
 				
-				
+			
 
 	}
 
