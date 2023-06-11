@@ -23,7 +23,7 @@ public class AppMain {
 
 	public static void main(String[] args) {
 		AppMain uygulama = new AppMain();
-
+			//onurbaş
 		uygulama.sinifOlustur();
 		uygulama.kisiOlustur();
 
