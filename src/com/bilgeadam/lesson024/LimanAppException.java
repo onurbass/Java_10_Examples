@@ -1,6 +1,6 @@
 package com.bilgeadam.lesson024;
 
-public class LimanAppException extends RuntimeException {
+public class LimanAppException extends Exception {
 	
 	private final ErrorType errorType;
 
