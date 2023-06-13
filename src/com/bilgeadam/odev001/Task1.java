@@ -1,4 +1,4 @@
-package com.bilgeadam.odevler001;
+package com.bilgeadam.odev001;
 
 import java.util.Iterator;
 import java.util.Scanner;

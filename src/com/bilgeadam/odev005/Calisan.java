@@ -26,9 +26,9 @@ public class Calisan extends Kisi {
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
-		
-		
+	
 	}
+	
 	@Override
 	public void raporAl() {
 		try {

@@ -1,4 +1,4 @@
-package com.bilgeadam.odevler001;
+package com.bilgeadam.odev001;
 
 import java.net.Socket;
 import java.util.Scanner;

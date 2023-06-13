@@ -1,4 +1,4 @@
-package com.bilgeadam.odevler001.deneme;
+package com.bilgeadam.odev001.deneme;
 
 public class Test {
 
