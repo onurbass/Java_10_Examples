@@ -1,26 +1,55 @@
 package com.bilgeadam.lesson006;
 
-import java.util.Scanner;
-
+/*
+ * 
+ * String degerinin karakterleri eger rakam ise toplayalım ve toplama ekleyelim 
+ * değil ise bu karaktere rakam değildir çıktısı 
+ * versin ve bir strin degere onları ekleyelim
+ * 
+ * 
+ */
 public class Question36 {
 
 	public static void main(String[] args) {
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		int[] dizi = new int[5];
-		
-		for (int i = 0; i < dizi.length; i++) {
-			
-			System.out.println(i+". indexi giriniz");
-			dizi[i]=scanner.nextInt();
-		
-			
-		}
-		for (int i = 0; i < dizi.length; i++) {
-			System.out.println("dizinin "+i+". indexi = "+dizi[i]);
+
+		String deger = "125ab1259xy";
+		int toplam = 0;
+		String sonDeger = "";
+
+		for (int i = 0; i < deger.length(); i++) {
+
+			char a = deger.charAt(i);
+			if (48 <= a && a <= 57) { // '0'<=a && a<='9'
+				String karakter1 = Character.toString(a);
+				int sayi = Integer.parseInt(karakter1);
+				toplam += sayi;
+			} else {
+				String karakter2 = Character.toString(a);
+				sonDeger += karakter2;
+			}
+
 		}
 
+		System.out.println("toplam= " + toplam);
+		System.out.println("son deger= " + sonDeger);
+		/// 2.çözüm
+		toplam = 0;
+		sonDeger = "";
+
+		for (int i = 0; i < deger.length(); i++) {
+			char a = deger.charAt(i);
+
+			if (Character.isDigit(a)) {
+				String karakter = Character.toString(a);
+				int sayi = Integer.parseInt(karakter);
+				toplam += sayi;
+			} else {
+				sonDeger += Character.toString(a);
+			}
+
+		}
+		System.out.println("toplam= " + toplam);
+		System.out.println("son deger= " + sonDeger);
 	}
 
 }

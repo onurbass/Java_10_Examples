@@ -1,31 +1,30 @@
 package com.bilgeadam.lesson003;
 
-import java.util.Scanner;
-
+/*
+ * 
+ * 1 den başlayarak sayıları toplayalım toplamımız 50 den buyuk olana kadar 
+ * programımız çalışsın  sonundada toplamı ve kaç kere çalışdıgını yazalım ;
+ * 
+ * 
+ */
 public class Question14 {
 
 	public static void main(String[] args) {
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Sayı giriniz");
-		int sayi1 = scanner.nextInt();
-		
-		int toplam =0;
-		int i=0;
-		int a = 0;
-		
-		do {
-		a=sayi1%10;
-		toplam+=a;
-		sayi1/=10;
-		i++;
-		
-		
-			
-		} while (sayi1>=1);
-		
-		System.out.println("basamak toplam = "+toplam+"\nBasamak Sayısı = "+i);
+
+		int sayac = 0;
+		int toplam = 0;
+		int sayi = 0;
+
+		while (toplam <= 50) {
+			sayi++;
+			toplam += sayi;
+			sayac++;
+			System.out.println("dongu toplam= " + toplam + " dongu sayısı " + sayac);
+		}
+
+		System.out.println("toplam= " + toplam);
+		System.out.println("sayac= " + sayac);
+		System.out.println("sayac= " + sayi);
 	}
 
 }

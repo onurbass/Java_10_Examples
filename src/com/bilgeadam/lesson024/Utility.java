@@ -1,61 +1,70 @@
 package com.bilgeadam.lesson024;
 
 import java.time.LocalDate;
-import java.util.InputMismatchException;
 import java.util.Optional;
 import java.util.Scanner;
 
 public class Utility {
+
 	static Scanner scanner = new Scanner(System.in);
 
+	/*
+	 * Dogru deger alana kadar bizden veri almaya devam eder int deger alana kadar
+	 * 
+	 */
+
 	public static int intDegerAlma(String sorgu) {
+
 		boolean kontrol = false;
-		int sayi = 0;
+		int deger = 0;
 		do {
 			System.out.println(sorgu);
 			try {
-				sayi = scanner.nextInt();
+				deger = scanner.nextInt();
 				kontrol = false;
 			} catch (Exception e) {
-				System.out.println(e.toString());
+				System.out.println(e.toString() + ": lütfen sayısal bir değer giriniz");
 				kontrol = true;
 			} finally {
 				scanner.nextLine();
 			}
+
 		} while (kontrol);
-		return sayi;
+		return deger;
 	}
 
 	public static double doubleDegerAlma(String sorgu) {
+
 		boolean kontrol = false;
-		double sayi = 0;
+		double deger = 0;
 		do {
 			System.out.println(sorgu);
 			try {
-				sayi = Double.parseDouble(scanner.nextLine());
+				deger = Double.parseDouble(scanner.nextLine());
 				kontrol = false;
 			} catch (Exception e) {
-				System.out.println(e.toString());
+				System.out.println(e.toString() + ": lütfen sayısal bir değer giriniz");
 				kontrol = true;
 			}
+
 		} while (kontrol);
-		return sayi;
+		return deger;
 	}
 
 	public static long longDegerAlma(String sorgu) {
 		boolean kontrol = false;
-		long sayi = 0;
+		long deger = 0;
 		do {
 			System.out.println(sorgu);
 			try {
-				sayi = Long.parseLong(scanner.nextLine());
+				deger = Long.parseLong(scanner.nextLine());
 				kontrol = false;
 			} catch (Exception e) {
-				System.out.println(e.toString());
+				System.out.println(e.toString() + ": lütfen sayısal bir değer giriniz");
 				kontrol = true;
 			}
 		} while (kontrol);
-		return sayi;
+		return deger;
 	}
 
 	public static String stringDegerAlma(String sorgu) {
@@ -63,7 +72,7 @@ public class Utility {
 		return scanner.nextLine();
 	}
 
-	public static LocalDate stringTarihAlma(String sorgu) {
+	public static LocalDate stringTarihDegeriAlma(String sorgu) {
 		boolean kontrol = false;
 		LocalDate date = null;
 		do {
@@ -72,28 +81,27 @@ public class Utility {
 				date = LocalDate.parse(scanner.nextLine());
 				kontrol = false;
 			} catch (Exception e) {
-				System.out.println(e.toString() + ": lütfen yıl-ay-gun formatında bir tarih girin");
+				System.out.println(e.toString() + ": lütfen yıl-ay-gun formatında bir tarih giriniz");
 				kontrol = true;
 			}
+
 		} while (kontrol);
+
 		return date;
 	}
 
-	public static Optional<LocalDate> stringTarihDegeriniTarihDegerineCevir(String tarih) {
+	public static Optional<LocalDate> stringTarihDegeriniTarihDegerineCevirme(String sorgu, String tarih) {
 		boolean kontrol = false;
 		LocalDate date = null;
 		try {
-			
+			System.out.println(sorgu);
 			date = LocalDate.parse(tarih);
 			kontrol = false;
 		} catch (Exception e) {
-			System.out.println(e.toString() + ": lütfen yıl-ay-gun formatında bir tarih girin");
+			System.out.println(e.toString() + ": lütfen yıl-ay-gun formatında bir tarih giriniz");
 			kontrol = true;
 		}
 		return Optional.ofNullable(date);
 	}
 
-	public static void cizgiCek() {
-		System.out.println("===============");
-	}
 }

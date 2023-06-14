@@ -1,11 +1,11 @@
 package com.bilgeadam.odev006;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.bilgeadam.lesson021.Map;
+
 
 public class Student {
 	int id;
@@ -19,11 +19,6 @@ public class Student {
 	}
 	
 
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", durum=" + durum + ", bolum=" + bolum + ", name=" + name + ", notlar=" + notlar
-				+ "]";
-	}
 
 	public int getId() {
 		return id;
@@ -63,6 +58,14 @@ public class Student {
 
 	public void setNotlar(List<Double> notlar) {
 		this.notlar = notlar;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", durum=" + durum + ", bolum=" + bolum + ", name=" + name + ", notlar=" + notlar
+				+ "]";
 	}
 
 }

@@ -1,35 +1,43 @@
 package com.bilgeadam.lesson002;
 
-import java.lang.foreign.ValueLayout.OfShort;
 import java.util.Scanner;
 
-import org.w3c.dom.ls.LSOutput;
-
+/*
+ * Dışarıdan 2 tane sayı alıp toplayalım 
+ * ve daha sonra bu sayı çif ise ekrana true yazdıralım 
+ * 
+ * 
+ * 
+ */
 public class Question7 {
-
-	public static void main(String[] args) {
 	
-		Scanner scanner = new Scanner(System.in);
+	
+	public static void main(String[] args) {
 		
-		System.out.println("Vize giriniz");
+		int sayi1,sayi2,toplam;
 		
-		double vize = scanner.nextDouble();
+		Scanner scanner=new Scanner(System.in);
 		
-		System.out.println("Final giriniz");
+		System.out.println("Lütfen birinci sayiyi giriniz");
 		
-		double finalSonuc = scanner.nextDouble();
+		sayi1=scanner.nextInt();
 		
-		System.out.println("isim giriniz");
-		scanner.nextLine();
+		System.out.println("Lütfen ikinci sayiyi giriniz");
+	
+		sayi2=scanner.nextInt();		
+	
+		toplam=sayi1+sayi2;
 		
-		String isim = scanner.nextLine();
+		System.out.println("toplam= "+ toplam);
 		
-		double ort = vize*0.4 + finalSonuc*0.6;
+		boolean kontrol=toplam%2==0;
 		
-		System.out.println(isim+" adlı öğrenci ders durumu :\n"+"ortalaması="+ort+((ort>60)? "-Geçti":"-Kaldı"));
-				
-			
-
+		System.out.println("toplam çift mi: "+kontrol);
+		
+		System.out.println(toplam%2==0?"Çift":"Tek");
+		System.out.println(kontrol?"Çift":"Tek");
+		
+		
 	}
 
 }

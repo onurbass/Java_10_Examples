@@ -1,72 +1,63 @@
 package com.bilgeadam.lesson008;
 
-import java.security.PublicKey;
-
+/*
+ * 1 metot yazalım bu metotta split kullanmadan 
+ * bu ifadeyi virgüllerden bolup su cıktıyı elde edelim 
+ * Java
+ * react
+ * spring 
+ * google
+ * 
+ * 
+ */
 public class Question42 {
 
 	public static void main(String[] args) {
 
 		String ifade = "Java,React,Spring,Google";
 
-		kelimeAyir(ifade);
-		System.out.println("----------");
-		kelimeAyirMetot(ifade);
-		System.out.println("----------");
-		kelimeAyirMetot2(ifade);
-		System.out.println("----------");
-		System.out.println(kelimeAyir4(ifade));
+		ifadeAyir(ifade);
+
+		ifadeAyir2(ifade);
+
+		System.out.println(ifadeAyir3(ifade));
+		// void metotları print metodunun içinde kullnamazsınız
+		// System.out.println(ifadeAyir2(ifade));
 
 	}
-	public static String kelimeAyir4(String ifade) {
-		System.out.println("3.metot");
-		
-		ifade=ifade.replace(",","\n" );
+
+	public static String ifadeAyir3(String ifade) {
+		System.out.println("3. metot");
+
+		ifade = ifade.replace(",", "\n");
+
 		return ifade;
-		
 	}
 
-	public static void kelimeAyir(String ifadeMetot) {
-		for (int i = 0; i < ifadeMetot.length(); i++) {
-
-			if (ifadeMetot.charAt(i) == ',') {
-				System.out.println();
-
-			} else {
-				System.out.print(ifadeMetot.charAt(i));
-			}
-
-		}
-
-	}
-
-	public static void kelimeAyirMetot(String ifadeMetot) {
-
-		for (int i = 0; i < ifadeMetot.length(); i++) {
-
-			Character a = ifadeMetot.charAt(i);
-			if (a.equals(',')) {
-				System.out.println();
-
-			}
-			System.out.print(ifadeMetot.charAt(i));
-
-		}
-	}
-
-	public static void kelimeAyirMetot2(String ifadeMetot) {
+	public static void ifadeAyir2(String ifade) {
 		int index = 0;
+		for (int i = 0; i < ifade.length(); i++) {
 
-		for (int i = 0; i < ifadeMetot.length(); i++) {
-
-			if (ifadeMetot.charAt(i) == ',') {
-				System.out.println(ifadeMetot.substring(index, i));
+			if (ifade.charAt(i) == ',') {
+				System.out.println(ifade.substring(index, i));
 				index = i + 1;
-
 			}
-			
 
 		}
-		System.out.println(ifadeMetot.substring(index,ifadeMetot.length()));
+		System.out.println(ifade.substring(index));
+
+	}
+
+	public static void ifadeAyir(String ifade) {
+
+		for (int i = 0; i < ifade.length(); i++) {
+			if (ifade.charAt(i) == ',') {
+				System.out.println();
+			} else {
+				System.out.print(ifade.charAt(i));
+			}
+		}
+		System.out.println();
 	}
 
 }

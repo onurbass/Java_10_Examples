@@ -2,34 +2,38 @@ package com.bilgeadam.lesson004;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * telefonkod mailkod başlangıc değerlerini biz kendimiz atayacağız (int)
+ * 
+ * daha sonra dışarıdan birtane telefon kodu alacağız bir tanede mail için koda
+ * alacağız
+ * 
+ * ikiside dogru ise sisteme kayıt oldunuz telefon dogru email yanlış ise =>
+ * email kodu hatalıdır email dogru telefon yanlış ise => telefon kdou hatalıdır
+ * ikiside yanlış ise => telefon ve email kodu hatalıdır
+ * 
+ */
 public class Question21 {
 
 	public static void main(String[] args) {
-	 Scanner scanner = new Scanner(System.in);
-	 
-	System.out.println("1. Sayıyı girin");
-	int sayi1 = scanner.nextInt();
-	System.out.println("2. sayıyı girin");
-	int sayi2 = scanner.nextInt();
-	
-	
-	
-	System.out.println("Yapacağınız işlemi giriniz");
-	scanner.next();
-	
-	String islem = scanner.nextLine();
-	
+		Scanner scanner = new Scanner(System.in);
+		int telefonKod = 10;
+		int mailKod = 20;
+		System.out.println("Lütfen bir mail kodu giriniz");
+		int mKod = scanner.nextInt();
+		System.out.println("Lütfen bir telefon kodu giriniz");
+		int tKod = scanner.nextInt();
 
-	switch (islem) {
-	case "+": System.out.println("Toplam sonucu"+ (sayi1+sayi2));
-	break;
-	case "-": System.out.println("Çıkarma sonucu"+ (sayi1-sayi2));
-	break;
-	case "*": System.out.println("Çarpım sonucu"+ (sayi1*sayi2));
-	break;
-	case "/": System.out.println("Bölüm sonucu"+ ((double) sayi1+sayi2));
-	break;
-	}
+		if (telefonKod == tKod && mailKod == mKod) {
+			System.out.println("Sisteme kayıt başarılı");
+		} else if (telefonKod == tKod && mailKod != mKod) {
+			System.out.println("email kodu hatalıdır");
+		} else if (telefonKod != tKod && mailKod == mKod) {
+			System.out.println("telofon kodu hatalıdır");
+		} else {
+			System.out.println("Telefon ve mail kodu hatalıdır");
+		}
 
 	}
 

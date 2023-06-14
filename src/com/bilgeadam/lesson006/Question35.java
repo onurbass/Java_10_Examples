@@ -1,26 +1,25 @@
 package com.bilgeadam.lesson006;
 
+/*
+ * deger stringinin karakterleri toplamı kaçtır;
+ * 
+ * 
+ */
 public class Question35 {
 
 	public static void main(String[] args) {
 
-		int max = Integer.MIN_VALUE;
-		int min = Integer.MAX_VALUE;
-		int[] sayilar = { 0, 12, 5, 85, -89, 1258, 87, 14 };
+		String deger = "1243513";
 
-		for (int i = 0; i < sayilar.length; i++) {
+		int toplam = 0;
+		int sayi1 = Integer.parseInt(deger);
+		int basamak = 0;
 
-			if (sayilar[i] < min) {
-
-				min = sayilar[i];
-
-			}
-			if (sayilar[i] > max) {
-				max = sayilar[i];
-
-			}
+		while (sayi1 >= 1) {
+			basamak = sayi1 % 10;
+			toplam += basamak;
+			sayi1 /= 10;
 		}
-		System.out.println("Max = " + max + "\nMin= " + min);
+		System.out.println(toplam);
 	}
-
 }

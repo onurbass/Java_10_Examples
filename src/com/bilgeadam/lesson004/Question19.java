@@ -1,39 +1,29 @@
 package com.bilgeadam.lesson004;
 
-import java.util.Scanner;
-
+/*
+ * * Soru4-)/*
+ * 1 den 100 ekadar olan çift sayıların toplamının
+ * tek sayıların toplamına oranı 
+ * 
+ */
 public class Question19 {
 
 	public static void main(String[] args) {
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		int mailKodu = 6599;
-		int telKodu =3575;
-		
-		System.out.println("Mail kodu girin");
-		int mailKodu2 = scanner.nextInt();
-		System.out.println("Telefon Kodu girin");
-		int telKodu2 =scanner.nextInt();
-		
-		if (mailKodu==mailKodu2 && telKodu==telKodu2) {
-			System.out.println("Başarılır");
-			
-		}
-		else if (mailKodu==mailKodu2 && telKodu!=telKodu2) {
-			System.out.println("Tel kodu hatalı");
-			
-		}
-		else if (mailKodu!=mailKodu2 && telKodu==telKodu2) {
-			System.out.println("Mail kodu hatalı");
-			
-		}
-		else {
-			System.out.println("Mail ve tel kodu hatalı");
-		}
-		
-	
 
+		double toplamTek = 0;
+		double toplamCift = 0;
+
+		for (int i = 0; i <= 100; i++) {
+			if (i % 2 == 0) {
+				toplamCift += i;
+			} else {
+				toplamTek += i;
+			}
+		}
+
+		System.out.println("çiftelerin toplamı: " + toplamCift);
+		System.out.println("teklerin toplamı: " + toplamTek);
+		System.out.println("oran: " + (toplamCift / toplamTek));
 	}
 
 }

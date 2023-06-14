@@ -1,11 +1,33 @@
 package com.bilgeadam.lesson001;
 
-public class Question3 {
-	public static void main(String[] args) {
+/*
+ * Bir urun fiyatında %18 kdv %15 kar payı oldugunu biliyoruz 
+ * 
+ * bu ürünün fiyatı elimizde olsun 
+ * daha sonra bu fiyat uzerinden 
+ * urunun 
+ * ham fiyatı 
+ * ve kdvsiz fiyatını bulalım 
+ * 
+ * 
+ * 
+ */
 
-		int fiyat = 100;
-		double kdvsiz = fiyat / 1.18;
-		double ham = kdvsiz / 1.15;
-		System.out.println("Kdvsiz = " + kdvsiz + "\n" + "Ham = " + ham);
+
+public class Question3 {
+	
+	
+	public static void main(String[] args) {
+		
+		int fiyat=100;
+		float hamFiyat,kdvsizFiyat;
+		
+		kdvsizFiyat=fiyat/1.18f;
+		hamFiyat=kdvsizFiyat/1.15f;
+		
+		System.out.println("urunun kdvsiz fiyatı:" + kdvsizFiyat);
+		System.out.println("urunun ham fiyatı:" + hamFiyat);
+		
 	}
+
 }

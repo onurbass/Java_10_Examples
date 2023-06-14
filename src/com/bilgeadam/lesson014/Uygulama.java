@@ -57,7 +57,7 @@ public class Uygulama {
 				kullanicilariGoster();
 				break;
 
-			case 4:System.out.println("Çıkış yapılıyor...");
+			case 4:
 
 				break;
 
@@ -100,7 +100,7 @@ public class Uygulama {
 			case "2":
 				urunEkle(kullanici);
 				break;
-			case "3":System.out.println("Çıkış yapılıyor...");
+			case "3":
 				break;
 			default:
 				System.out.println("default");

@@ -1,35 +1,26 @@
 package com.bilgeadam.lesson009;
 
-import java.util.Iterator;
-
 public class Question47 {
 
 	public static void main(String[] args) {
-		diziYazdir(diziOlustur());
 
+		// karakterSayici("Bugün güzel bir gün", 'i');
+		System.out.println(karakterSayici("Bugün güzel bir gün", 'i'));
 	}
 
-	public static String[][] diziOlustur() {
-		String[][] carpimTablo = new String[10][10];
+	public static int karakterSayici(String ifade, char karakter) {
 
-		for (int i = 0; i < carpimTablo.length; i++) {
-			for (int j = 0; j < carpimTablo[i].length; j++) {
+		int sayac = 0;
 
-				carpimTablo[i][j] = (i + 1) + "x" + (j + 1) + " = " + (i + 1) * (j + 1);
+		for (int i = 0; i < ifade.length(); i++) {
+
+			if (ifade.charAt(i) == karakter) {
+				sayac++;
 			}
-
 		}
-		return carpimTablo;
-	}
+		System.out.println("metot içindeki yazdırma= " + sayac);
+		return sayac;
 
-	public static void diziYazdir(String[][] dizi) {
-		for (int i = 0; i < dizi.length; i++) {
-			for (int j = 0; j < dizi[i].length; j++) {
-				System.out.print(dizi[i][j] + " ");
-
-			}
-			System.out.println();
-		}
 	}
 
 }

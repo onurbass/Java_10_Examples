@@ -3,37 +3,69 @@ package com.bilgeadam.lesson009;
 public class Question46 {
 
 	public static void main(String[] args) {
-		int start = 2;
-		int end = 22;
 
-		String[] diziStrings = kontrol(start, end);
-		
-		for (int i = 0; i < diziStrings.length; i++) {
+		int sayiDizisi[] = { 9, 7, 5, 7, 7, 3, 5, 18, 2, 5, 0, 7 };
 
-			System.out.println(diziStrings[i]);
+		ilkTekrarEdenSayiyiBul2(sayiDizisi);
+
+	}
+
+	public static void ilkTekrarEdenSayiyiBul(int[] dizi) {
+
+		int sayac = 1;
+		for (int i = 0; i < dizi.length; i++) {
+			for (int j = i + 1; j < dizi.length; j++) {
+				if (dizi[i] == dizi[j]) {
+					sayac++;
+				}
+			}
+			if (sayac > 1) {
+				System.out.println("tekrar eden sayımız= " + dizi[i]);
+				System.out.println("tekrar sayımız= " + sayac);
+				break;
+
+			}
+		}
+
+		if (sayac == 1) {
+			System.out.println("Tekrar eden sayi bulunamadı");
 		}
 
 	}
 
-	public static String[] kontrol(int baslangic, int bitis) {
-		String[] dizi = new String[bitis - baslangic + 1];
+	public static void ilkTekrarEdenSayiyiBul2(int[] dizi) {
+		int sayac = 0;
+
+		Integer tekrarEdenSayi = null;
 
 		for (int i = 0; i < dizi.length; i++) {
-
-			dizi[i] = Integer.toString(i + baslangic);
-
-			if (Integer.parseInt(dizi[i]) % 3 == 0 && Integer.parseInt(dizi[i]) % 5 == 0) {
-				dizi[i] = "bilgeadam";
-
-			} else if (Integer.parseInt(dizi[i]) % 3 == 0) {
-				dizi[i] = "bilge";
-
-			} else if (Integer.parseInt(dizi[i]) % 5 == 0) {
-				dizi[i] = "adam";
-
+			System.out.println(i);
+			for (int j = i + 1; j < dizi.length; j++) {
+				if (dizi[i] == dizi[j]) {
+					tekrarEdenSayi = dizi[i];
+					break;
+				}
 			}
+			if (tekrarEdenSayi != null) {
+				break;
+			}
+
 		}
-		return dizi;
+
+		if (tekrarEdenSayi == null) {
+			System.out.println("Tekrar eden sayi bulunamadı");
+		} else {
+			for (int i = 0; i < dizi.length; i++) {
+				if (dizi[i] == tekrarEdenSayi) {
+
+					sayac++;
+				}
+			}
+
+			System.out.println("tekrar eden sayımız= " + tekrarEdenSayi);
+			System.out.println("tekrar sayımız= " + sayac);
+
+		}
 
 	}
 

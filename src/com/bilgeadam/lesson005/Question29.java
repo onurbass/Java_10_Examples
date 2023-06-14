@@ -2,34 +2,34 @@ package com.bilgeadam.lesson005;
 
 import java.util.Scanner;
 
+/*
+ * Mukemmel sayi dışarıdan girilen bir sayının mukemmel sayı 
+ * olup olmadıgını bulup mukemmel sayı ise mukemmel sayıdır cıktısı
+ * değil ise mukemmel sayı değildir cıktısı versin
+ * 
+ * 6=1+2+3; Kendisi haric tam bolenlerinin toplamı kendisine eşit olan sayı
+ * 
+ * 
+ */
 public class Question29 {
 
 	public static void main(String[] args) {
-
 		Scanner scanner = new Scanner(System.in);
+		int toplam = 0;
+		System.out.println("Lütfen bir sayi giriniz");
+		int sayi = scanner.nextInt();
 
-		System.out.println("0 ile 100 arası bir sayı giriniz");
-		int sayi1 = scanner.nextInt();
-		int i = 1;
-		int buyukKontrol = 0;
-		int kucukKontrol = 0;
-
-		while (i < 5) {
-			System.out.println("Tekrar 0 ile 100 arası bir sayı giriniz sayıyı giriniz");
-			int sayi2 = scanner.nextInt();
-			if (sayi1 < sayi2) {
-				buyukKontrol = sayi2;
-			} else {
-				buyukKontrol = sayi1;
-				kucukKontrol = sayi2;
+		for (int i = 1; i <= sayi / 2; i++) {
+			if (sayi % i == 0) {
+				toplam += i;
 			}
-			sayi1 = sayi2;
-
-			i++;
-
 		}
-		System.out.println(buyukKontrol);
-		System.out.println(kucukKontrol);
+
+		if (sayi == toplam) {
+			System.out.println(sayi + " Mükemmel bir sayıdır.");
+		} else {
+			System.out.println(sayi + " Mükemmel bir sayıdır değildir!!!");
+		}
 
 	}
 
