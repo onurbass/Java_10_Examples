@@ -48,7 +48,7 @@ public class SerlizationTest {
 
 	public static void serilizationList2(List<Movie> movieList) {
 		try (ObjectOutputStream oos = new ObjectOutputStream(
-				new FileOutputStream("E:/java10-workspace/dosya/seri3.txt"))) {
+				new FileOutputStream("D:\\Java10-Workspace\\seri3.txt"))) {
 
 			oos.writeObject(movieList);
 
@@ -62,7 +62,7 @@ public class SerlizationTest {
 	public static void serilizationList(List<Movie> movieList) {
 
 		try (ObjectOutputStream oos = new ObjectOutputStream(
-				new FileOutputStream("E:/java10-workspace/dosya/seri2.txt"))) {
+				new FileOutputStream("D:\\Java10-Workspace\\seri2.txt"))) {
 			for (Movie movie : movieList) {
 				oos.writeObject(movie);
 			}
@@ -76,7 +76,7 @@ public class SerlizationTest {
 
 	public static void serilization(Movie movie) {
 		try (ObjectOutputStream oos = new ObjectOutputStream(
-				new FileOutputStream("E:/java10-workspace/dosya/seri.txt"))) {
+				new FileOutputStream("D:\\Java10-Workspace\\seri.txt"))) {
 			oos.writeObject(movie);
 			System.out.println("Serilestirme işlemi başarılı");
 		} catch (FileNotFoundException e) {
@@ -91,7 +91,7 @@ public class SerlizationTest {
 	public static List<Movie> deserilizationList() {
 		List<Movie> movieList = new ArrayList<>();
 		try (ObjectInputStream ois = new ObjectInputStream(
-				new FileInputStream("E:/java10-workspace/dosya/seri2.txt"))) {
+				new FileInputStream("D:\\Java10-Workspace\\seri2.txt"))) {
 
 			Movie movie = null;
 			while ((movie = (Movie) ois.readObject()) != null) {
@@ -113,7 +113,7 @@ public class SerlizationTest {
 
 		List<Movie> list = new ArrayList<>();
 		try (ObjectInputStream ois = new ObjectInputStream(
-				new FileInputStream("E:/java10-workspace/dosya/seri3.txt"))) {
+				new FileInputStream("D:\\Java10-Workspace\\seri3.txt"))) {
 			list = (List<Movie>) ois.readObject();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -123,7 +123,7 @@ public class SerlizationTest {
 
 	public static Optional<Movie> deserilization() {
 		Movie movie = null;
-		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("E:/java10-workspace/dosya/seri.txt"))) {
+		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("D:\\Java10-Workspace\\seri.txt"))) {
 			movie = (Movie) ois.readObject();
 
 		} catch (ClassNotFoundException e) {
