@@ -22,12 +22,12 @@ public class FileManager {
 
 	static String path = "D:\\Java10-Workspace\\ogrenci.txt";
 
-	public static List<Ogrenci> dosyadanVeriOku(String ogretmenIsmi) {
+	public static List<Ogrenci> dosyadanVeriOku(String ogretmenIsmi, BufferedReader bufferedReader) {
 		List<Ogrenci> list = new ArrayList<>();
 
 		String veri = "";
 
-		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
+		try  {
 			while ((veri = bufferedReader.readLine()) != null) {
 				String[] array = veri.split(",");
 				String isim = array[0];
@@ -58,9 +58,9 @@ public class FileManager {
 	public static void ogretmenDosyasıOlustur(String ogretmenIsmi, List<Ogrenci> ogrencis) {
 		String path = "D:\\Java10-Workspace\\" + ogretmenIsmi + ".txt";
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(path))) {
-
+		
 			oos.writeObject(ogrencis);
-
+			
 			System.out.println("Serilize işlemi başarılı");
 		} catch (Exception e) {
 			System.out.println("Serilize işlemi başarısız");

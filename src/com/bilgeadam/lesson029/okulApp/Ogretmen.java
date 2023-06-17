@@ -1,5 +1,6 @@
 package com.bilgeadam.lesson029.okulApp;
 
+import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,38 +8,25 @@ public class Ogretmen extends Thread {
 
 	private String isim;
 	private List<Ogrenci> ogrenciler;
+	private BufferedReader bufferedReader;
 
-	public Ogretmen(String isim) {
+	public Ogretmen(String isim,BufferedReader bufferedReader) {
 		this.isim = isim;
 		this.ogrenciler = new ArrayList<>();
+		this.bufferedReader=bufferedReader;
 	}
 
 	@Override
 	public void run() {
-		for (int i = 0; i < 10; i++) {
-			System.out.println(this.isim + " adlı ogretmen" + i + " .ogrencinin notunu okudu");
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+		notlariOku();
+	
+	
 	}
 
 	public void notlariOku() {
 
-		this.ogrenciler = FileManager.dosyadanVeriOku(this.isim);
-		for (int i = 0; i < ogrenciler.size(); i++) {
-			System.out.println(ogrenciler.get(i).getIsim() + " adlı öğrencinin ort = " + ogrenciler.get(i).getOrt()
-					+ " Durumu = " + ogrenciler.get(i).getDurum());
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+		this.ogrenciler = FileManager.dosyadanVeriOku(this.isim,this.bufferedReader);
+		
 	}
 
 	public void dosyayaYaz() {
@@ -48,12 +36,6 @@ public class Ogretmen extends Thread {
 
 	public List<Ogrenci> dosyadanOku() {
 		this.ogrenciler = FileManager.ogrencileriGetir(this.isim);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		return this.ogrenciler;
 	}
 
