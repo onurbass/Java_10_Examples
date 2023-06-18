@@ -15,6 +15,7 @@ public class OkulManager {
 	public static <T> void kayitEt(List<T> list, T object) {
 		list.add(object);
 	}
+	
 
 	public static <T> void kayitSil(List<T> list, T object) {
 		try {
