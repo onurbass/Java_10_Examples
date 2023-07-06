@@ -83,7 +83,7 @@ public class Utility {
 		boolean kontrol = false;
 		LocalDate date = null;
 		try {
-			
+
 			date = LocalDate.parse(tarih);
 			kontrol = false;
 		} catch (Exception e) {

@@ -1,6 +1,5 @@
 package com.bilgeadam.lesson033;
 
-import com.bilgeadam.lesson033.utility.Notification;
 import com.bilgeadam.lesson033.utility.User;
 
 /*
@@ -22,28 +21,9 @@ import com.bilgeadam.lesson033.utility.User;
 
 
 */
-public class Instagram extends SocialMedia {
+public class Instagram extends SocialMedia implements IEmail, ISms, IPostPaylas {
 
 	public Instagram() {
-
-	}
-
-	public void bildirimGonder(User user) {
-		mailGonder(user);
-		smsmGonder(user);
-
-	}
-
-	public void mailGonder(User user) {
-		if (user.getEmail() != null) {
-			Notification.emailGonder(user);
-		}
-	}
-
-	public void smsmGonder(User user) {
-		if (user.getPhone() != null) {
-			Notification.smsGonder(user);
-		}
 
 	}
 
@@ -59,7 +39,51 @@ public class Instagram extends SocialMedia {
 			scaleRatio = 40;
 		}
 		return scaleRatio;
-	
+
+	}
+
+	@Override
+	public void emailGonder(User user) {
+		if (user.getEmail() != null) {
+			System.out.println(user.getPhone() + " sms gönderiliyor...");
+		} else {
+			System.out.println("mail gönderilemedi");
+		}
+	}
+
+	@Override
+	public void smsGonder(User user) {
+		if (user.getPhone() != null) {
+			System.out.println(user.getEmail() + " mail gönderiliyor...");
+		} else {
+			System.out.println("sms gönderilemedi");
+		}
+
+	}
+
+
+	@Override
+	public void sharePost() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void sharePhoto() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void shareStory() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void chat() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
